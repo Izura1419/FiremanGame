@@ -97,7 +97,7 @@ function game() {
 			apple.style.display = "none";
 		}
 		if (carLeft > fireLeft - 120){
-			dialog.innerHTML = "Вы проиграли";
+			dialog.innerHTML = "Вы проиграли.";
 			setTimeout(function(){
 				dialog.style.opacity = "0";
 			}, 1000);
