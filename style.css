@@ -1,0 +1,257 @@
+@font-face{
+	font-family: "Sans Serif";
+
+	src: url("fonts/helvetica.otf");
+}
+html{
+	overflow: hidden;
+}
+.game{
+	height: 100%;
+	width: 100%;
+}
+.score{
+	position: absolute;
+	top: 20px;
+	left: 30px;
+
+	color: #fff;
+
+	z-index: 1;
+
+	font-family: "Sans Serif", helvetica;
+	font-size: 2em;
+
+	transition: all 1s linear;
+}
+.dialog{
+	opacity: 1;
+
+	transition: all 1s linear;
+
+	position: absolute;
+	top: 270px;
+	left: 550px;
+
+	color: #000;
+
+	z-index: 2;
+
+	font-family: "Sans Serif", helvetica;
+	font-size: 2em;
+}
+.bg{
+	background-image: url(img/bg.jpg);
+
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: -280px;
+	left: 0px;
+
+	z-index: 0;
+
+	transition: all 1s linear;
+
+	animation: dayOrNight 60s linear 0s infinite;
+}
+@keyframes dayOrNight{
+	from{
+		filter: brightness(100%)
+	}
+	50%{
+		filter: brightness(0%)
+	}
+	to{
+		filter: brightness(100%)
+	}
+}
+.ground{
+	background-image: url(img/ground.png);
+
+	width: 100%;
+	height: 120px;
+
+	position: absolute;
+	top: 300px;
+	left: 0px;
+
+	z-index: 1;
+}
+.underGround{
+	background-image: url(img/underGround.png);
+
+	width: 100%;
+	height: 250px;
+
+	position: absolute;
+	top: 400px;
+	left: 0px;
+}
+.gradient{
+	width: 100%;
+	height: 100%;
+
+	background: linear-gradient(to bottom, rgba(0,0,0,0), #000); 
+}
+.fireCar{
+	background-image: url(img/firecar.png);
+	background-size: 100%;
+
+	transform: rotateY(180deg);   
+
+	width: 240px;
+	height: 120px;
+
+	position: absolute;
+	top: 235px;
+	left: 50px;
+
+	z-index: 0;
+
+	transition: all 1s linear;
+}
+@keyframes ride{
+	from{
+		top: 235px;
+		left: 50px;
+	}
+	25%{
+		top: 230px;
+		left: 5px;
+	}
+	50%{
+		top: 235px;
+		left: 155px;
+	}
+	75%{
+		top: 230px;
+		left: 200px;
+	}
+	to{
+		top: 235px;
+		left: 50px;
+	}
+}
+.house{
+	background-image: url(img/house.png);
+	background-size: 100%;
+
+	transform: rotateY(180deg);   
+
+	width: 180px;
+	height: 200px;
+
+	position: absolute;
+	top: 180px;
+	left: 900px;
+
+	z-index: 0;
+}
+.wood{
+	display: none;
+
+	background-image: url(img/wood.png);
+	background-size: 100%;
+
+	transform: rotateY(180deg);   
+
+	width: 130px;
+	height: 143px;
+
+	position: absolute;
+	top: 200px;
+	left: 800px;
+
+	z-index: 0;
+
+	animation: saturMove 5s linear 0s infinite;
+}
+@keyframes saturMove{
+	from{
+		left: 1500px;
+		filter: saturate(100%)
+	}
+	50%{
+		filter: saturate(300%)
+	}
+	to{
+		left: -100px;
+		filter: saturate(100%)
+	}
+}
+.fire{
+	display: none;
+
+	background-image: url(img/fire.png);
+	background-size: 100%;
+
+	transform: rotateY(180deg);   
+
+	width: 100px;
+	height: 100px;
+
+	position: relative;
+	top: 180px;
+	left: 780px;
+
+	z-index: 0;
+
+	animation: fireMove 5s linear 0s infinite;
+}
+.apple{
+	display: none;
+
+	background-image: url(img/apple.png);
+	background-size: 100%;
+
+	transform: rotateY(180deg);   
+
+	width: 60px;
+	height: 60px;
+
+	position: relative;
+	top: 200px;
+	left: 790px;
+
+	z-index: 0;
+
+	animation: fireMove 5s linear 0s infinite;
+}
+@keyframes fireMove{
+	from{
+		left: 1500px;
+		transform: rotateY(180deg) scale(1);
+	}
+	50%{
+		transform: rotateY(0deg) scale(1.2);  
+	}
+	to{
+		left: -100px;
+		transform: rotateY(180deg) scale(1);  
+	}
+}
+.water{
+	display: none;
+
+	position: absolute;
+
+	top: 235px;
+	left: 50px;
+
+	width: 35px;
+	height: 35px;
+
+	border-radius: 20px;
+
+	background-color: rgb(50,50,205);
+}
+@keyframes fly{
+	from{
+		left: 220px;
+	}
+	to{
+		left: 1500px;
+	}
+}
