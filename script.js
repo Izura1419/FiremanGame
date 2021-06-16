@@ -29,12 +29,14 @@ house.onclick = function() {
 				setTimeout(function(){
 					dialog.style.opacity = "0";
 					game();
-				}, 2000);
-			}, 2000);
-		}, 2000);
+				}, 2500);
+			}, 4000);
+		}, 2500);
 }
 
 function game() {
+
+	house.onclick = function(){}
 
 	fireCar.style.animation = "ride 4s linear 0s infinite";
 
@@ -93,8 +95,10 @@ function game() {
 			fire.style.display = "none";
 			water.style.left = "50px";
 		}
-		if (waterLeft > appleLeft - 50 && waterLeft < appleLeft + 50 && waterLeft > 50){
+		if (waterLeft > appleLeft - 50 && waterLeft < appleLeft + 50 && waterLeft > 50 && apple.style.display == "inline-block"){
 			apple.style.display = "none";
+
+			score.innerHTML = score.innerHTML - 20;
 		}
 		if (carLeft > fireLeft - 120){
 			dialog.innerHTML = "Вы проиграли.";
