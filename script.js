@@ -1,4 +1,6 @@
 let bg = document.querySelector(".bg");
+let ground = document.querySelector('.ground');
+let underGround = document.querySelector('.underGround');
 
 let fireCar = document.querySelector(".fireCar");
 let fire = document.querySelector(".fire");
@@ -29,9 +31,9 @@ house.onclick = function() {
 				setTimeout(function(){
 					dialog.style.opacity = "0";
 					game();
-				}, 2500);
-			}, 4000);
-		}, 2500);
+				}, 1000);
+			}, 2000);
+		}, 1500);
 }
 
 function game() {
@@ -39,6 +41,11 @@ function game() {
 	house.onclick = function(){}
 
 	fireCar.style.animation = "ride 4s linear 0s infinite";
+
+	ground.style.animation = "movingGround 4s linear 0s infinite";
+	underGround.style.animation = "movingGround 4s linear 0s infinite";
+
+	bg.style.animation = "dayOrNight 10s linear 0s infinite";
 
 	function getRand(max,min){
 		let ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -48,16 +55,16 @@ function game() {
 	house.style.animation = "saturMove 5s linear 0s infinite";
 
 	setInterval(function(){
-		let fireOrApple = getRand(2,0);
+		let fireOrApple = getRand(3,0);
 		let woodOrHouse = getRand(1,0);
 
 		if ( fireOrApple == 0 ){
-			fire.style.display = "inline-block";
-			apple.style.display = "none";
-		}
-		if ( fireOrApple == 1 || fireOrApple == 2) {
-			fire.style.display = "none";
 			apple.style.display = "inline-block";
+			fire.style.display = "none";
+		}
+		if ( fireOrApple == 1 || fireOrApple == 2 || fireOrApple == 3) {
+			apple.style.display = "none";
+			fire.style.display = "inline-block";
 		}
 
 		if ( woodOrHouse == 0 ){
