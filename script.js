@@ -1,4 +1,5 @@
 let bg = document.querySelector(".bg");
+let moon = document.querySelector('.moon');
 let ground = document.querySelector('.ground');
 let underGround = document.querySelector('.underGround');
 
@@ -46,6 +47,7 @@ function game() {
 	underGround.style.animation = "movingGround 4s linear 0s infinite";
 
 	bg.style.animation = "dayOrNight 10s linear 0s infinite";
+	moon.style.animation = "nightOrDay 50s linear 0s infinite";
 
 	function getRand(max,min){
 		let ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -58,6 +60,8 @@ function game() {
 		let fireOrApple = getRand(3,0);
 		let woodOrHouse = getRand(1,0);
 
+		let indexOfObject = getRand(1,0);
+
 		if ( fireOrApple == 0 ){
 			apple.style.display = "inline-block";
 			fire.style.display = "none";
@@ -69,11 +73,13 @@ function game() {
 
 		if ( woodOrHouse == 0 ){
 			wood.style.display = "inline-block";
+			wood.style.zIndex = indexOfObject;
 			house.style.display = "none";
 		}
 		if ( woodOrHouse == 1 ){
 			wood.style.display = "none";
 			house.style.display = "inline-block";
+			house.style.zIndex = indexOfObject;
 
 			apple.style.display = "none";
 		}
