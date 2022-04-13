@@ -20,7 +20,7 @@ house.onclick = function() {
 		dialog.style.opacity = "1";
 		dialog.style.color = "#fff";
 
-		dialog.style.top = "380px";
+		dialog.style.top = "440px";
 		dialog.style.left = "600px";
 
 		dialog.style.width = "500px";
